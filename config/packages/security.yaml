@@ -1,0 +1,22 @@
+security:
+  providers:
+    author_provider:
+      entity:
+        class: App\Entity\Author
+        property: email
+
+  firewalls:
+    main:
+      lazy: true
+      pattern: ^/
+      provider: author_provider
+      custom_authenticator:
+        - App\Security\GoogleAuthenticator
+      form_login:
+        login_path: connect_google
+        check_path: connect_google_check
+      logout:
+        path: google_logout
+
+  access_control:
+      - { path: ^/comment, role: IS_AUTHENTICATED_FULLY }

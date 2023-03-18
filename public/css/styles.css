@@ -3,6 +3,15 @@ body {
     color: white;
 }
 
+.user-banner {
+    margin-top: 20px;
+}
+
+img.avatar {
+    max-height: 30px;
+    border-radius: 50%;
+}
+
 a {
     color: #a2a2ad;
 }
@@ -19,6 +28,8 @@ img.poster {
 .movie .description {
     margin-top: 20px;
 }
+
+.error {color: red;}
 
 .footer {
     padding-top: 50px;
