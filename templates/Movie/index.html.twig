@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Movies{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <h1>Movie catalog</h1>
+        {% for movie in movies %}
+            <div class="col-md-4 col-xs-12 movie">
+                <p>{{ movie.name|upper }}</p>
+                <a href="{{ path('movie_show', {id: movie.id}) }}"><img class="poster" src="{{ movie.imageUrl }}" alt="{{ movie.name }}'s poster"/></a>
+                <div><a href="{{ path('movie_show', {id: movie.id}) }}">Read more</a></div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

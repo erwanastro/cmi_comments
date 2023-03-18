@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ movie.name }}{% endblock %}
+
+{% block content %}
+    <div class="row movie">
+        <div class="col-md-12 col-xs-12">
+            <h1>{{ movie.name|upper }}</h1>
+            <p><a href="{{ path('movie_index') }}">Go back to catalog</a></p>
+            <img class="poster" src="{{ movie.imageUrl }}" alt="{{ movie.name }}'s poster"/>
+            <p class="description">{{ movie.description }}</p>
+        </div>
+    </div>
+{% endblock %}

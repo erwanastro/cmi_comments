@@ -1,0 +1,25 @@
+body {
+    background-color: #32323D;
+    color: white;
+}
+
+a {
+    color: #a2a2ad;
+}
+
+img.poster {
+    max-height: 400px;
+    max-width: 300px;
+}
+
+.movie {
+    margin-bottom: 20px;
+}
+
+.movie .description {
+    margin-top: 20px;
+}
+
+.footer {
+    padding-top: 50px;
+}
