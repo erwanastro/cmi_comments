@@ -1,0 +1,18 @@
+{% macro show_comment(comment, showMovieInformations, depth) %}
+    <div class="author-information">
+        <img src="{{ comment.author.avatar }}" alt="Author's avatar" class="avatar"/>
+        <span>{{ comment.author.name~' - '~ comment.createdAt|date('d/m/y H:i')}}</span>
+    </div>
+    {% if showMovieInformations %}
+        <div class="movie-information">
+            <a href="{{ path('movie_show', {id: comment.movie.id}) }}">{{ comment.movie.name }}</a>
+        </div>
+    {% endif %}
+    <div class="content">
+        <span title="{{ comment.likes }} likes">
+            {{ comment.content }}
+            <a href="{{ path('comment_like', {id: comment.id}) }}" class="emoji">&#128151;<sup>{{ comment.likes }}</sup></a>
+        </span>
+        <a title="Answer to this comment" href="{{ path('comment_answer', {id: comment.id}) }}" class="emoji">&#128172;</a>
+    </div>
+{% endmacro %}

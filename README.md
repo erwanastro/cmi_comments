@@ -5,6 +5,8 @@ The comments are related to a catalog of movies.
 
 The catalog is public, but you need to log with your Google account in order to post some comments.
 
+The comments are sorted by number of likes on a movie page, and by date on the homepage.
+
 ## Start the project
 
 ### Prerequisites

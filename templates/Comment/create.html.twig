@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
+            <h1>{{ movie.name|upper }}</h1>
+            <p><a href="{{ path('movie_show', {id: movie.id}) }}">Go back to movie</a></p>
+            {{ form(form) }}
+        </div>
+    </div>
+{% endblock %}

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -21,6 +22,9 @@ class Movie
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $imageUrl = null;
+
+    #[ORM\OneToMany(mappedBy: 'movie', targetEntity: Comment::class)]
+    private Collection $comments;
 
     public function getId(): ?int
     {
@@ -55,5 +59,15 @@ class Movie
     public function setImageUrl(?string $imageUrl): void
     {
         $this->imageUrl = $imageUrl;
+    }
+
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function setComments(Collection $comments): void
+    {
+        $this->comments = $comments;
     }
 }

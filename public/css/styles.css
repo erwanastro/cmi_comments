@@ -29,6 +29,23 @@ img.poster {
     margin-top: 20px;
 }
 
+.comment {
+    margin-top: 20px;
+}
+
+.comment .content {
+    margin-top: 5px;
+    margin-left: 35px;
+}
+
+.comment .movie-information {
+    margin-left: 35px;
+}
+
+a:link.emoji {
+    text-decoration: none;
+}
+
 .error {color: red;}
 
 .footer {

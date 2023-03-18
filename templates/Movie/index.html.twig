@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
+{% from 'common/_macros.html.twig' import show_comment %}
+
 {% block title %}Movies{% endblock %}
 
 {% block content %}
@@ -12,5 +14,21 @@
                 <div><a href="{{ path('movie_show', {id: movie.id}) }}">Read more</a></div>
             </div>
         {% endfor %}
+    </div>
+
+    <hr/>
+    <div class="comments">
+        <h2>Latest comments</h2>
+        {% if latestComments|length == 0 %}
+            <p>Be the first one to comment a movie!</p>
+        {% else %}
+            <div class="row">
+                {% for comment in latestComments %}
+                    <div class="col-md-4 col-xs-6 comment">
+                        {{ show_comment(comment, true) }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
     </div>
 {% endblock %}

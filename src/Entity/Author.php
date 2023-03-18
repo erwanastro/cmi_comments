@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -15,6 +16,9 @@ class Author implements UserInterface
 
     #[ORM\Column(length: 128, unique: true)]
     private ?string $email = null;
+
+    #[ORM\OneToMany(mappedBy: 'author', targetEntity: Comment::class)]
+    private Collection $comments;
 
     #[ORM\Column(type: 'json')]
     private array $roles = [];
@@ -51,6 +55,16 @@ class Author implements UserInterface
     public function eraseCredentials()
     {
 
+    }
+
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function setComments(Collection $comments): void
+    {
+        $this->comments = $comments;
     }
 
     public function getRoles(): array
