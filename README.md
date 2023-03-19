@@ -3,6 +3,8 @@
 This project is a relative to a technical test for MCI. The aim of it is to develop a comment system.
 The comments are related to a catalog of movies.
 
+<img src="screenshot.png"/>
+
 The catalog is public, but you need to log with your Google account in order to post some comments.
 
 The comments are sorted by number of likes on a movie page, and by date on the homepage.
